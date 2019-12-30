@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282830"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <VideoView
+        android:id="@+id/backgroundVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backgroundMaskImageView"
+        android:layout_width="367dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="225dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rectangle" />
+
+    <Button
+        android:id="@+id/stopBtn"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@drawable/stop_btn_background"
+        android:enabled="false"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:soundEffectsEnabled="false"
+        android:text="@string/stop"
+        android:textAllCaps="false"
+        android:textColor="#282830"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resetBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/startBtn"
+        app:layout_constraintTop_toBottomOf="@+id/millisecondTextView" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@drawable/reset_btn_background"
+        android:enabled="false"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:soundEffectsEnabled="false"
+        android:text="@string/reset"
+        android:textAllCaps="false"
+        android:textColor="#282830"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/stopBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/stopBtn" />
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@drawable/start_btn_background"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:soundEffectsEnabled="false"
+        android:text="@string/start"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/stopBtn"
+        app:layout_constraintEnd_toStartOf="@+id/stopBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"></Button>
+
+    <TextView
+        android:id="@+id/hourTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="00"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/minuteTextView"
+        app:layout_constraintEnd_toStartOf="@+id/splitTextView1" />
+
+    <TextView
+        android:id="@+id/minuteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="00"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/secondTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="00"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/minuteTextView"
+        app:layout_constraintStart_toEndOf="@+id/splitTextView2" />
+
+    <TextView
+        android:id="@+id/splitTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="@string/split"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/splitTextView2"
+        app:layout_constraintEnd_toStartOf="@+id/minuteTextView" />
+
+    <TextView
+        android:id="@+id/splitTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="270dp"
+        android:text="@string/split"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/minuteTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/millisecondTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="000"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minuteTextView" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textColor="#0094F4"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/titleLineImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/titleLineImageView"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="100dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/minuteTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

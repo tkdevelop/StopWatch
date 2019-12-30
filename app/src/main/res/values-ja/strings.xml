@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ストップウォッチ</string>
+    <string name="split">:</string>
+    <string name="start">スタート</string>
+    <string name="stop">ストップ</string>
+    <string name="reset">リセット</string>
+</resources>
